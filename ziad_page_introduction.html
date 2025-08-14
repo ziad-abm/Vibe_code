@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZIAD — Développeur Frontend</title>
+    <meta name="description" content="Page d'introduction personnelle de ZIAD : profil, passions, et objectif en tant que développeur frontend." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      :root{
+        --bg: #0b1020;
+        --bg-accent: #0f1730;
+        --text: #eaf2ff;
+        --muted: #b8c2d6;
+        --primary: #7c5cff;
+        --primary-600: #6948ff;
+        --ring: rgba(124,92,255,.35);
+        --card: #0e152b;
+        --shadow: 0 30px 60px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.04);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body{
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,.25), transparent 60%),
+                    radial-gradient(1000px 500px at -20% 110%, rgba(64, 201, 255, .20), transparent 60%),
+                    var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.6;
+        letter-spacing: .1px;
+      }
+
+      /* Single section hero */
+      .hero{
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 4rem 1.25rem;
+        position: relative;
+        isolation: isolate;
+      }
+      .card{
+        width: min(980px, 100%);
+        background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)) , var(--card);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255,255,255,.06);
+        padding: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+        position: relative;
+        overflow: hidden;
+      }
+      /* Decorative glow */
+      .card::after{
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(400px 280px at 75% 20%, rgba(124,92,255,.25), transparent 60%),
+                    radial-gradient(360px 240px at 20% 80%, rgba(64,201,255,.22), transparent 60%);
+        filter: blur(30px);
+        z-index: -1;
+      }
+
+      .eyebrow{
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .85rem;
+        color: var(--muted);
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        padding: .5rem .9rem;
+        background: rgba(124,92,255,.08);
+        border: 1px solid rgba(124,92,255,.25);
+        border-radius: 999px;
+      }
+      .title{
+        margin: 1rem 0 .25rem;
+        font-weight: 800;
+        line-height: 1.1;
+        font-size: clamp(2rem, 4.6vw, 3.8rem);
+        letter-spacing: .2px;
+      }
+      .subtitle{
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.4vw + .8rem, 1.25rem);
+        max-width: 62ch;
+      }
+      .goal{
+        margin: 0 0 1.75rem;
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: .95rem;
+        color: #d9e2ff;
+        opacity: .95;
+      }
+      .cta{
+        display: inline-flex;
+        align-items: center;
+        gap: .6rem;
+        padding: .9rem 1.2rem;
+        border-radius: 14px;
+        border: 1px solid rgba(124,92,255,.35);
+        background: linear-gradient(180deg, rgba(124,92,255,.15), rgba(124,92,255,.10));
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 10px 22px var(--ring);
+        will-change: transform, box-shadow;
+        transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      }
+      .cta:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 16px 28px var(--ring);
+        background: linear-gradient(180deg, rgba(124,92,255,.18), rgba(124,92,255,.12));
+      }
+      .cta:focus-visible{
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+
+      .meta{
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--muted);
+        font-size: .95rem;
+        flex-wrap: wrap;
+      }
+      .dot{ width:6px; height:6px; border-radius: 50%; background: var(--primary); display:inline-block; }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce){
+        .cta{ transition: none; }
+        .cta:hover{ transform: none; box-shadow: 0 10px 22px var(--ring); }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero">
+      <section class="card" aria-label="Section de présentation personnelle">
+        <span class="eyebrow" aria-hidden="true">Portfolio &nbsp;•&nbsp; Frontend</span>
+        <h1 class="title">Salut, moi c’est ZIAD</h1>
+        <p class="subtitle">Étudiant en informatique appliquée & cybersécurité — passionné par l’UI/UX, les micro‑animations et le code propre côté front.</p>
+        <p class="goal">Objectif&nbsp;: devenir développeur frontend capable de concevoir des interfaces rapides, accessibles et élégantes — en combinant <em>design</em>, performance et sécurité.</p>
+        <a class="cta" href="#projects" aria-label="Afficher mes projets">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Afficher mes projets
+        </a>
+        <div class="meta" role="note">
+          <span><span class="dot"></span> Stack actuelle : HTML • CSS • JS • React (débutant)</span>
+          <span>+ exploration : Tailwind, Framer Motion</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
